@@ -27,10 +27,10 @@ This portfolio contains hands-on projects developed during the Udacity Data Engi
 
 | # | Project | Description |
 |--|---------|-------------|
-| 1 | [Data Modeling with Cassandra](./1_data_modeling_redshift) | Designed NoSQL data model with Apache Cassandra and created an scalable ETL pipeline to ingest data from S3 into query-optimized tables for analytical queries. |
-| 2 | [Data Warehouse on AWS](./2_data_warehouse_aws) | Developed a cloud data warehouse and designed star schema to structure raw data with Redshift to support analytics on large datasets stored in S3. |
-| 3 | [Data Lake with Spark](./3_data_lake_spark) | Processed and transformed raw data from S3 using PySpark to build a scalable data lake. |
-| 4 | [Data Pipeline with Airflow](./4_airflow_data_pipeline) | Orchestrated complex data workflows using Apache Airflow and automated the ETL process. |
+| 1 | [Data Modeling with Cassandra](./data_modeling_cassandra) | Designed NoSQL data model with Apache Cassandra and created an scalable ETL pipeline to ingest data from S3 into query-optimized tables for analytical queries. |
+| 2 | [Data Warehouse on AWS](./data_warehouse_aws) | Developed a cloud data warehouse and designed star schema to structure raw data with Redshift to support analytics on large datasets stored in S3. |
+| 3 | [Data Lake with Spark](./data_lake_spark) | Processed and transformed raw data from S3 using PySpark to build a scalable data lake. |
+| 4 | [Data Pipelines with Airflow](./airflow_data_pipelines) | Orchestrated complex data workflows using Apache Airflow and automated the ETL process. |
 
 ---
 
