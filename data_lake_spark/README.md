@@ -76,19 +76,19 @@ The final curated dataset will allow data scientists to train a model that accur
 
 ## 📑 Deliverables
 
-    1. SQL Scripts (in /scripts)
+    1. SQL Scripts (in /SQL DDL scipts for Landing Glue Table)
         - customer_landing.sql
         - accelerometer_landing.sql
         - step_trainer_landing.sql
 
-    2. AWS Glue Jobs (in /glue_jobs)
+    2. AWS Glue Jobs (in /Glue Job Python Scripts)
         - customer_trusted.py
         - accelerometer_trusted.py
         - customers_curated.py
         - step_trainer_trusted.py
         - machine_learning_curated.py
 
-    3. Athena Query Screenshots (in /screenshots)
+    3. Athena Query Screenshots (in /Athena Count Queries Images)
         - customer_landing.png
         - accelerometer_landing.png
         - step_trainer_landing.png
