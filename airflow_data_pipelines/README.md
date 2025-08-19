@@ -70,7 +70,7 @@ The pipeline is dynamic, reusable, supports backfills, and ensures data integrit
 2. Steps
     - Create IAM User with S3 + Redshift access
     - Set up Redshift Serverless workgroup
-3. Copy datasets from Udacity’s S3 bucket to your own
+3. Copy datasets from Udacity’s S3 bucket to my own
     - aws s3 cp s3://udacity-dend/log-data/ s3://<your-bucket>/log-data/ --recursive
     - aws s3 cp s3://udacity-dend/song-data/ s3://<your-bucket>/song-data/ --recursive
 4. Configure Airflow Connections:
