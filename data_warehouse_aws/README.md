@@ -69,6 +69,13 @@ To optimize queries for **song play analysis**, a **star schema** was implemente
 
 ---
 
+## 🧰 Tools & Technologies
+
+ - **AWS S3** → Data Lake
+ - **Amazon Redshift** → Cloud Data Warehouse
+ - **Python (psycopg2, configparser)** → ETL Pipeline
+ - **SQL** → Schema Design & Data Transformations
+
 ## ⚙️ Project Structure
 ```bash
 ├── create_tables.py     # Creates fact & dimension tables in Redshift
@@ -76,3 +83,60 @@ To optimize queries for **song play analysis**, a **star schema** was implemente
 ├── sql_queries.py       # SQL statements for schema & ETL
 ├── dwh.cfg              # Config file with Redshift & IAM role details
 └── README.md            # Project documentation
+```
+## 📊 Example Queries
+###  **1. Most Played Song**
+
+`SELECT s.title, COUNT(*) AS play_count
+FROM songplays sp
+JOIN songs s ON sp.song_id = s.song_id
+GROUP BY s.title
+ORDER BY play_count DESC
+LIMIT 1;`
+
+### **2. Busiest Hour of the Day**
+
+`SELECT t.hour, COUNT(*) AS total_plays
+FROM songplays sp
+JOIN time t ON sp.start_time = t.start_time
+GROUP BY t.hour
+ORDER BY total_plays DESC
+LIMIT 1;`
+
+### **3. Most Active Users**
+
+`SELECT u.user_id, u.first_name, u.last_name, COUNT(*) AS songplays
+FROM songplays sp
+JOIN users u ON sp.user_id = u.user_id
+GROUP BY u.user_id, u.first_name, u.last_name
+ORDER BY songplays DESC
+LIMIT 5;`
+
+### **4. Top Artists by Play Count**
+
+`SELECT a.name AS artist_name, COUNT(*) AS play_count
+FROM songplays sp
+JOIN artists a ON sp.artist_id = a.artist_id
+GROUP BY a.name
+ORDER BY play_count DESC
+LIMIT 5;`
+
+## ✅ Key Takeaways
+
+ - Designed a scalable cloud-based data warehouse.
+ - Automated data loading from S3 → Redshift.
+ - Implemented a star schema optimized for analytics.
+ - Enabled Sparkify’s analytics team to query insights on user activity and song plays.
+
+## 🧑‍💻 How to Run
+
+ 1. Update dwh.cfg with Redshift cluster & IAM details.
+ 2. Run schema creation:
+ ```bash
+   python create_tables.py
+ ```
+ 4. Run ETL pipeline:
+ ```bash
+    python etl.py
+ ```
+ 5. Query results in AWS Redshift Query Editor.
